@@ -1,0 +1,180 @@
+\ProvidesPackage{neepubeamer}
+
+
+%% ================ 颜色 ===================
+%\definecolor{neepugreen}{rgb}{0,0.6,0}
+\definecolor{neepugreen}{rgb}{0.2,0.6,0.2}
+\setbeamercolor{section in toc}{fg=black}    % section在目录中的颜色 前景色
+%\setbeamercolor{section in toc}{bg=green}	 % section在目录中的颜色 背景色
+%\setbeamercolor{title}{bg=black!5!white, fg=neepugreen}
+\setbeamercolor{titlepageheader}{bg=red,fg=red}
+\setbeamercolor{titlepagefooter}{bg=red,fg=black}
+\setbeamercolor{block title}{fg=white,bg=neepugreen}	 % block标题框颜色 fg为标题颜色，bg为底色
+\setbeamercolor{block body}{fg=black,bg=neepugreen!10!white} %block内容框颜色
+
+%% ================ 主题 ===================
+\mode<presentation>
+{
+	%\useoutertheme[subsection=false]{miniframes}
+	% \usetheme{PaloAlto}
+    \usetheme{AnnArbor}
+	%\usetheme{Berkeley}
+	% \usetheme{Darmstadt}
+	% \usetheme{Boadilla}
+	\usecolortheme{spruce}
+	\usecolortheme[named=neepugreen]{structure}
+	%\usecolortheme{orchid}
+	%\usecolortheme{whale}
+
+	% \usecolortheme{default}
+	% \usecolortheme{wolverine}
+	% \usecolortheme{crane}
+	% \usecolortheme{rose}
+	\setbeamercovered{transparent}
+}
+
+% 用于Berkeley主题左上角logo
+%\pgfdeclareimage[height=1.5cm]{university-logo}{cumtb}
+%\logo{\pgfuseimage{university-logo}}
+
+%% ================ 字体 ===================
+\usefonttheme{professionalfonts}  % 不对字体设置，需要使用另外的宏包
+\usepackage{fontspec}
+%\setsansfont{Microsoft YaHei}
+%\setCJKmainfont{Microsoft YaHei}
+%\setCJKmonofont{KaiTi}
+%\setCJKsansfont{Microsoft YaHei}
+
+%% ================ 字号 ===================
+%\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+%\setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamerfont{title}{size=\huge,}
+%\setbeamerfont{subtitle}{size=\footnotesize,series=\bfseries}
+%\setbeamerfont{author}{size=\normalsize}
+%\setbeamerfont{date}{size=\scriptsize}
+
+%\setbeamerfont{block title}{size=\normalsize}
+%\setbeamerfont{structure}{size=\normalsize,series=\bfseries}
+
+\usepackage{tikz}
+\usepackage{url}
+\usepackage[bookmarksopen=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{subfigure} 
+\usepackage{mathrsfs}  % 数学花体
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{array}
+%\usepackage{unicode-math}
+
+\usepackage{booktabs}
+
+\usepackage{cases}    %equation set 数学环境
+\usepackage{multirow} %use table
+\usepackage{colortbl} 
+\usepackage{enumerate}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+%\usepackage{capt-of}
+\setcounter{tocdepth}{1}
+
+
+\usepackage{listings}
+\lstset{
+	%language=[LaTeX]TeX,   % 使用latex语言
+	tabsize=4, 
+	keepspaces=true,
+	xleftmargin=2em,
+	xrightmargin=0em, 
+	aboveskip=1em,
+	backgroundcolor=\color{gray!20},  % 定义背景颜色
+	frame=none,                        % 表示不要边框
+	extendedchars=false,               % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+	numberstyle=\ttfamily,
+	basicstyle=\ttfamily,
+	keywordstyle=\color[RGB]{40,40,255},% 关键词高亮
+	breakindent=10pt,
+	identifierstyle=,                  % nothing happens
+	commentstyle=\color{red}\small,    % 注释yanse 
+	morecomment=[l][\color{green}]{\#},
+	numbers=left,
+	%stepnumber=1,
+	%numberstyle=\scriptsize,
+	showstringspaces=false,
+	showspaces=false,  %显示空格
+	flexiblecolumns=true,
+	breaklines=true, breakautoindent=true,breakindent=4em,
+	escapeinside={/*@}{@*/},
+	%escapeinside={\%*}{*)},
+	%caption=LaTeX example
+	%morekeywords = {chapter,subsection,part,\{,\},includegraphics,onlinecite},
+}
+
+%\lstset{
+%	columns=fixed,       
+%	numbers=left,                                        % 在左侧显示行号
+%	numberstyle=\tiny\color{gray},                       % 设定行号格式
+%	frame=none,                                          % 不显示背景边框
+%	backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+%	keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+%	numberstyle=\footnotesize\color{darkgray},           
+%	commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+%	stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+%	showstringspaces=false,                              % 不显示字符串中的空格
+%}
+
+
+
+% 在每个部分的开头列出大纲
+\AtBeginSection[] % Do nothing for \subsection*
+{
+	\begin{frame}<beamer>
+		\frametitle{Outline}
+		\tableofcontents[current,currentsection]
+	\end{frame}
+}
+
+\setcounter{tocdepth}{2} % 目录深度 显示section和subsection
+% Outline: default, sections numbered, subsections numbered, circle, square, ball, ball unnumbered
+\setbeamertemplate{sections/subsections in toc}[square]
+% Itemize items: default (triangle), circle, square, ball
+\setbeamertemplate{itemize items}[default]
+% Enumerate items: default, circle, square, ball
+\setbeamertemplate{enumerate items}[circle]
+
+
+% 在标题的前面添加图或表编号
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{theorems}[numbered]
+
+% General blocks: 生成“圆角（rounded）”块 并且块有阴影
+\setbeamertemplate{blocks}[rounded][shadow=true]
+%\setbeamertemplate{blocks}[default]
+
+%% 背景设置   两种方法
+%\pgfdeclareimage 插图透明图片 取名叫bg 
+%\pgfdeclareimage[width=\paperwidth,height=0.95\paperheight]{bg}{figure/neepu_background.jpg}
+%\setbeamertemplate{background}{\pgfuseimage{bg}}
+
+\logo{\includegraphics[width=2cm,height=2cm]{figure/NEEPU.pdf}}
+
+
+%% 参考文献 上标
+\usepackage{cite}
+% \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+% \newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+
+\bibliographystyle{unsrt}
+
+
+% 花体字
+\usepackage{calligra}
+\usepackage[T1]{fontenc}

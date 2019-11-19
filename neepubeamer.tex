@@ -1,0 +1,115 @@
+\documentclass[UTF8,11pt]{beamer}
+\usepackage{ctex}
+
+\usepackage{bxtexlogo}  % 标志宏包
+\usepackage{tipa}  		% 音标宏包
+
+\ctexset{
+	today=old   % old 英文  small中文小写 big中文大写
+}
+
+\usepackage{neepubeamer}
+
+
+\title{NEEPU Beamer Tamplate}
+%\subtitle{}
+\author{Neiou8}
+\date{\today}
+\institute{Northeast Electric Power University}
+
+
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+	% [pausesections]
+\end{frame}
+
+\section{section1}
+\subsection{subsection1}
+\begin{frame}{The enumarate item}
+	\begin{enumerate}
+		\item item1
+		\item item2
+	\end{enumerate}
+\end{frame}
+
+
+\subsection{subsection2}
+\begin{frame}{Itemize item}
+	\begin{itemize}
+		\item item1
+		\item item2
+	\end{itemize}
+\end{frame}
+
+
+\subsection{subsection3}
+\begin{frame}{block}
+	\begin{block}{Example}
+		TEXT BLOCK
+	\end{block}
+\end{frame}
+
+
+\subsection{subsection4}
+\begin{frame}[fragile]{code}
+	\lstset{language=C}
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+
+int main()
+{
+cout<<"hello"<<endl;
+return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+
+
+\section{section2}
+\subsection{subsection1}
+\begin{frame}{subsection1}
+	\begin{itemize}[<+->]
+		\item First
+		\item Second
+		\item ...
+	\end{itemize}
+\end{frame}
+
+\subsection{subsection2}
+\begin{frame}{subsection2}
+	\begin{figure}[htbp]
+		\includegraphics[scale=0.1]{figure/neepu_logo}
+		\caption{NEEPU logo}
+	\end{figure}
+\end{frame}
+
+
+\subsection{subsection3}
+\begin{frame}{subsection3}
+	\begin{equation}
+	f(x) = 
+	\begin{cases}
+	\dfrac{\cos{x}}{x+\sin{x}} & x \geq 0 \\
+	ax^2+bx+c & x \leq 0
+	\end{cases}
+	\end{equation}
+\end{frame}
+
+
+\begin{frame}{thank you}
+	\centering \calligra \zihao{1} Thank you!
+\end{frame}
+
+
+\end{document}
