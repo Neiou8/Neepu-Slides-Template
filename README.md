@@ -1,5 +1,4 @@
 # neepu-slides
-Neepu Beamer Tamplate
 Here are the slides forNortheast Electric Power University.
 You should be able to compile the source files by: xelatex neepubeamer.tex with TeX Live 2019.
 
