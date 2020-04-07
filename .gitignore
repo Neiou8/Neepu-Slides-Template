@@ -1,0 +1,20 @@
+# tex auxillary files
+*.log
+*.aux
+*.log
+*.synctex.gz
+*.out
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+
+# bibliography related
+*-blx.bib
+*.run.xml
+*.bbl
+*.blg
+*.bcf
